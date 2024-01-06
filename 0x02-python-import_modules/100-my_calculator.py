@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name__=="__main__":
+if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
 
@@ -13,11 +13,11 @@ elif (len(sys.argv)) == 4:
     if operator == "+":
         print(f"{a} {operator} {b} = {add(a, b)}")
     elif operator == "-":
-         print(f"{a} {operator} {b} = {sub(a, b)}")
+        print(f"{a} {operator} {b} = {sub(a, b)}")
     elif operator == "*":
-         print(f"{a} {operator} {b} = {mul(a, b)}")
+        print(f"{a} {operator} {b} = {mul(a, b)}")
     elif operator == "/":
-         print(f"{a} {operator} {b} = {div(a, b)}")
+        print(f"{a} {operator} {b} = {div(a, b)}")
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
