@@ -8,7 +8,7 @@ class Square:
     def __init__(self , size = 0):
         """instance"""
 
-        self.__size = size  
+        self.size = size  
     
     @getter
     def size(self):
