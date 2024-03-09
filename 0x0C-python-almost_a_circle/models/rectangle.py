@@ -11,8 +11,8 @@ class Rectangle(Base):
         super().__init__(id)
         self.width = width
         self.height = height
-        self.x = x
-        self.y = y
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -21,7 +21,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """width setter"""
-        if not isintance(value, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -34,7 +34,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        if not isintance(value, int):
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -46,7 +46,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        if not isintance(value, int):
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value <= 0:
             raise ValueError("x must be >= 0")
@@ -58,7 +58,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        if not isintance(value, int):
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value <= 0:
             raise ValueError("y must be >= 0")
@@ -68,8 +68,10 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        for i in range(self.__y):
-            print(f"{'#' * self.__x}")
+        for j in range(self.__y):
+            print('')
+        for i in range(self.__height):
+            print(f"{' ' * self.__x}{'#' * self.__width}")
 
     def __str__(self):
         """overriding str"""
@@ -80,11 +82,10 @@ class Rectangle(Base):
 
 if __name__ == "__main__":
 
-    r1 = Rectangle(3, 2)
-    print(r1.area())
+    r1 = Rectangle(2, 3, 2, 2)
+    r1.display()
 
-    r2 = Rectangle(2, 10)
-    print(r2.area())
+    print("---")
 
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
+    r2 = Rectangle(3, 2, 1, 0)
+    r2.display()

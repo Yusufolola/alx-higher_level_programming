@@ -10,7 +10,7 @@ class Base:
         intialize id
         """
         if id is not None:
-            id = self.id
+            self.id = id
         else:
-            __nb_objects += 1
-        id = __nb_objects
+            self.__nb_objects += 1
+        self.id = self.__nb_objects
