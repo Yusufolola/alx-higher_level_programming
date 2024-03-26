@@ -3,4 +3,4 @@
 
 def lookup(obj):
     """prototype"""
-    return (obj.__dict__)
+    return (dir(obj))
