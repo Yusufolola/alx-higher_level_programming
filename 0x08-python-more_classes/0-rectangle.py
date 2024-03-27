@@ -4,4 +4,5 @@
 
 class Rectangle:
     """An empty class with no parameter"""
+
     pass
