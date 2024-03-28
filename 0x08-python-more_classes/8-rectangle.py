@@ -5,11 +5,14 @@
 class Rectangle:
     """this class defines a rectangle"""
 
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """initializes the rectangle instance with width and height"""
-
         self.height = height
         self.width = width
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -44,17 +47,27 @@ class Rectangle:
         if (value < 0):
             raise ValueError("height must be >= 0")
         self.__height = value
-
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """returns the biggest rectangle base on area"""
     def __str__(self):
         """print the rectangle with # character"""
 
         if (self.__width == 0) or (self.__height == 0):
             return ("")
 
-        return "\n".join("#" * self.__width for i in range(self.__height))
+        return "\n".join(str(self.print_symbol) * self.__width for i in range(self.__height))
 
     def __repr__(self):
-        return f"rectangle(self.__width, self.__height)"
+        """return instance representation"""
+
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """delete an instance of the class"""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
+
     def area(self):
         """returns the area"""
         return (self.__height * self.__width)

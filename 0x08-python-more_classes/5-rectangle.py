@@ -54,7 +54,15 @@ class Rectangle:
         return "\n".join("#" * self.__width for i in range(self.__height))
 
     def __repr__(self):
-        return f"rectangle(self.__width, self.__height)"
+        """return instance representation"""
+
+        return f"Rectangle({self.__width}, {self.__height})"
+    
+    def __del__(self):
+        """delete an instance of the class"""
+
+        print("Bye rectangle...")
+
     def area(self):
         """returns the area"""
         return (self.__height * self.__width)
