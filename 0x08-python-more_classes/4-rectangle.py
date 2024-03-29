@@ -57,7 +57,7 @@ class Rectangle:
         """return instance representation"""
 
         return f"Rectangle({self.__width}, {self.__height})"
-    
+
     def area(self):
         """returns the area"""
         return (self.__height * self.__width)

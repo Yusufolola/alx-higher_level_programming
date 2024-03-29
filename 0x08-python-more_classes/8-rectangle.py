@@ -47,16 +47,27 @@ class Rectangle:
         if (value < 0):
             raise ValueError("height must be >= 0")
         self.__height = value
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """returns the biggest rectangle base on area"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if (rect_1.area() == rect_2.area()) or rect_1.area() > rect_2.area():
+            return rect_1
+        elif rect_2.area() > rect_1.area():
+            return rect_2.area()
+
     def __str__(self):
         """print the rectangle with # character"""
 
         if (self.__width == 0) or (self.__height == 0):
             return ("")
 
-        return "\n".join(str(self.print_symbol) * self.__width for i in range(self.__height))
+        return "\n".join(str(self.print_symbol) * self.__width
+                         for i in range(self.__height))
 
     def __repr__(self):
         """return instance representation"""

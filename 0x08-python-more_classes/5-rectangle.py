@@ -57,7 +57,7 @@ class Rectangle:
         """return instance representation"""
 
         return f"Rectangle({self.__width}, {self.__height})"
-    
+
     def __del__(self):
         """delete an instance of the class"""
 
