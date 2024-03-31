@@ -1,16 +1,17 @@
 #!/usr/bin/python3
+"""base class"""
+
+
 class Base:
-    """
-    base of all classes
-    """
+    """ base of all classes"""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        intialize id
-        """
+        """intialize id"""
+
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
         if id is not None:
             self.id = id
-        else:
-            self.__nb_objects += 1
-        self.id = self.__nb_objects
