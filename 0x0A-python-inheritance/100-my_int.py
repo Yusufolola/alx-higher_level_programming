@@ -5,8 +5,7 @@
 class MyInt(int):
     """same as above"""
 
-    def __init___(self, value):
-        super().__init__(value)
-
     def __eq__(self, other):
-        if isinstance(other, MyInt):
+        if self is other:
+            return True
+        return False
