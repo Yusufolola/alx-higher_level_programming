@@ -1,15 +1,14 @@
 #!/usr/bin/node
 /* script that prints two arguments passed */
 
-if (process.argv.length <= 1)
+let arg1 = process.argv.slice(2)[0];
+let arg2 = process.argv.slice(2)[1];
+if (arg1 === undefined)
 {
-	console.log("undefined is undefined");
+	arg1 = "undefined";
 }
-else if (process.argv.length <= 2)
+if (arg2 === undefined)
 {
-	console.log(`${process.argv[2]} is undefined`);
+	arg2 = "undefined";
 }
-else
-{
-	console.log(`${process.argv[2]} is ${process.argv[3]}`);
-}
+console.log(`${arg1} is ${arg2}`);

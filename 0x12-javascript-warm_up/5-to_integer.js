@@ -8,5 +8,5 @@ if (isNaN(parseInt(num)))
 }
 else
 {
-	console.log(`My number: ${num}`);
+	console.log(`My number: ${parseInt(num)}`);
 }

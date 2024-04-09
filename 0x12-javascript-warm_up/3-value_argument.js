@@ -1,12 +1,12 @@
 #!/usr/bin/node
 /* a script that prints the first argument*/
 
-if (process.agrv[2] === undefined)
+const arg = process.argv.slice(2)[0];
+if (arg === undefined)
 {
 	console.log("No argument");
 }
-else
-{
-	console.log(process.agrv[2]);
+else{
+	console.log(`${arg}`);
 }
 
