@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 -- using select statement to query database
 
+import MySQLdb as sdb
+import sys
 if __name__ == "__main__":
-    import MySQLdb as sdb
-    import sys
 
     with sdb.connect(
             host="localhost", user=sys.argv[1], password=sys.argv[2],

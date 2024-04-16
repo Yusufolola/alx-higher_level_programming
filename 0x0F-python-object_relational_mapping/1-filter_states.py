@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 -- selects from states where in a database
+
+import MySQLdb as sdb
+import sys
 if __name__ == "__main__":
-    import MySQLdb as sdb
-    import sys
 
     with sdb.connect(
             host="localhost", user=sys.argv[1],
