@@ -1,5 +1,5 @@
 #!/usr/bin/python3
--- using select statement to query database
+"""using select statement to query database"""
 
 import MySQLdb as sdb
 import sys

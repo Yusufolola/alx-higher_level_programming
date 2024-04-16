@@ -1,5 +1,5 @@
 #!/usr/bin/python3
--- selects from states where in a database
+"""selects from states where in a database"""
 
 import MySQLdb as sdb
 import sys

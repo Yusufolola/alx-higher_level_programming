@@ -1,5 +1,5 @@
 #!/usr/bin/python3
--- select from state using filters
+"""select from state using filters"""
 
 import MySQLdb as sdb
 import sys

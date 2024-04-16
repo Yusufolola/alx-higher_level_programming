@@ -1,5 +1,5 @@
 #!/usr/bin/python3
---select and filter using parameterization
+"""select and filter using parameterization"""
 
 import MySQLdb as sdb
 import sys

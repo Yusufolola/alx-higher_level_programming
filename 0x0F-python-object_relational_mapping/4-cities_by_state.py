@@ -1,5 +1,5 @@
 #!/usr/bin/python3
---using inner join statements to search in database
+"""using inner join statements to search in database"""
 
 import MySQLdb as sdb
 import sys
