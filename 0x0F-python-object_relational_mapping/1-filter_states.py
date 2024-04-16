@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-
-import MySQLdb as sdb
-import sys
-
+-- selects from states where in a database
 if __name__ == "__main__":
+    import MySQLdb as sdb
+    import sys
 
-    with sdb.connect(host="localhost", user=sys.argv[1], password=sys.argv[2], database=sys.argv[3]) as database:
+    with sdb.connect(
+            host="localhost", user=sys.argv[1],
+            password=sys.argv[2], database=sys.argv[3]) as database:
         cursor = database.cursor()
         query = '''SELECT *
         FROM states
@@ -15,4 +16,3 @@ if __name__ == "__main__":
         datas = cursor.fetchall()
         for data in datas:
             print(data)
-
