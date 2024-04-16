@@ -11,7 +11,7 @@ if __name__ == "__main__":
         cursor = database.cursor()
         query = '''SELECT *
         FROM states
-        WHERE name LIKE 'N%'
+        WHERE name LIKE BINARY 'C%'
         '''
         cursor.execute(query)
         datas = cursor.fetchall()
